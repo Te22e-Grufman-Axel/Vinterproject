@@ -1,0 +1,14 @@
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\bin\Debug\net7.0\Vinterproject.exe
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\bin\Debug\net7.0\Vinterproject.deps.json
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\bin\Debug\net7.0\Vinterproject.runtimeconfig.json
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\bin\Debug\net7.0\Vinterproject.dll
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\bin\Debug\net7.0\Vinterproject.pdb
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.AssemblyInfoInputs.cache
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.AssemblyInfo.cs
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.csproj.CoreCompileInputs.cache
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.dll
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\refint\Vinterproject.dll
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.pdb
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\Vinterproject.genruntimeconfig.cache
+C:\Users\axel.grufman\Documents\Vanlig programering\Vinterproject\Vinterproject\obj\Debug\net7.0\ref\Vinterproject.dll
