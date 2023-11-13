@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/Vinterproject/bin/Debug/net7.0/Vinterproject.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Vinterproject",
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {

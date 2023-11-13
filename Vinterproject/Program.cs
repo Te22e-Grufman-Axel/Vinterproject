@@ -5,141 +5,174 @@ int time = 12;
 
 string val = "";
 String nuvaranderum = "Flygner1";
-while(true){
-if(nuvaranderum == "Flygner1")
+while (true)
 {
-flygner1();
-}
-else if(nuvaranderum == "Flygner2")
-{
-Flygner2();
-}
-else if(nuvaranderum == "litenflod")
-{
-Litenflod();
-}
-else if(nuvaranderum == "hem")
-{
-hem();
-}
-else if(nuvaranderum == "Storöppnign")
-{
-Storöppnigne();
-}
-else if(nuvaranderum == "Helikopter")
-{
-Helikopterner();
-}
-else if(nuvaranderum == "Orm")
-{
-orm();
-}
-else if(nuvaranderum == "Storflodkant")
-{
-storflodkant();
-}
-else if(nuvaranderum == "Evigvägupp")
-{
-evigvägupp();
-}
-else if(nuvaranderum == "Evigvägner")
-{
-evigvägner();
-}
-else if(nuvaranderum == "Båt")
-{
-båt();
-}
-else if(nuvaranderum == "Corridor1")
-{
-corridor1();
-}
-else if(nuvaranderum == "Corridor2")
-{
-corridor2();
-}
-else if(nuvaranderum == "Corridor3")
-{
-corridor3();
-}
-else if(nuvaranderum == "Corridor4")
-{
-corridor4();
-}
-else if(nuvaranderum == "Corridor5")
-{
-corridor5();
-}
-else if(nuvaranderum == "Corridor6")
-{
-corridor6();
-}
-else if(nuvaranderum == "Corridor7")
-{
-corridor7();
-}
-else if(nuvaranderum == "Corridor8")
-{
-corridor8();
-}
-else if(nuvaranderum == "Corridor9")
-{
-corridor9();
-}
-else if(nuvaranderum == "Corridor10")
-{
-corridor10();
-}
-else if(nuvaranderum == "Corridor11")
-{
-corridor11();
-}
-else if(nuvaranderum == "Corridor12")
-{
-corridor12();
-}
-else if(nuvaranderum == "Corridor13")
-{
-corridor13();
-}
-else if(nuvaranderum == "Corridor14")
-{
-corridor14();
-}
-else if(nuvaranderum == "Corridor15")
-{
-corridor15();
-}
-else if(nuvaranderum == "Corridor16")
-{
-corridor16();
-}
-else if(nuvaranderum == "Corridor17")
-{
-corridor17();
-}
-else if(nuvaranderum == "Corridor18")
-{
-corridor18();
-}
-else if(nuvaranderum == "Corridor19")
-{
-corridor19();
-}
-else if(nuvaranderum == "Corridor20")
-{
-corridor20();
-}
-else if(nuvaranderum == "Corridor21")
-{
-corridor11();
-}
+    if (nuvaranderum == "Flygner1")
+    {
+        Console.Clear();
+        Flygner1();
+    }
+    else if (nuvaranderum == "Flygner2")
+    {
+        Console.Clear();
+        Flygner2();
+    }
+    else if (nuvaranderum == "Litenflod")
+    {
+        Console.Clear();
+        Litenflod();
+    }
+    else if (nuvaranderum == "Hem")
+    {
+        Console.Clear();
+        Hem();
+    }
+    else if (nuvaranderum == "Storöppnign")
+    {
+        Console.Clear();
+        Storöppnign();
+    }
+    else if (nuvaranderum == "Helikopter")
+    {
+        Console.Clear();
+        Helikopterner();
+    }
+    else if (nuvaranderum == "Orm")
+    {
+        Console.Clear();
+        Orm();
+    }
+    else if (nuvaranderum == "Storflodkant")
+    {
+        Console.Clear();
+        Storflodkant();
+    }
+    else if (nuvaranderum == "Evigvägupp")
+    {
+        Console.Clear();
+        Evigvägupp();
+    }
+    else if (nuvaranderum == "Evigvägner")
+    {
+        Console.Clear();
+        Evigvägner();
+    }
+    else if (nuvaranderum == "Båt")
+    {
+        Console.Clear();
+        Båt();
+    }
+    else if (nuvaranderum == "Corridor1")
+    {
+        Console.Clear();
+        Corridor1();
+    }
+    else if (nuvaranderum == "Corridor2")
+    {
+        Console.Clear();
+        Corridor2();
+    }
+    else if (nuvaranderum == "Corridor3")
+    {
+        Console.Clear();
+        Corridor3();
+    }
+    else if (nuvaranderum == "Corridor4")
+    {
+        Console.Clear();
+        Corridor4();
+    }
+    else if (nuvaranderum == "Corridor5")
+    {
+        Console.Clear();
+        Corridor5();
+    }
+    else if (nuvaranderum == "Corridor6")
+    {
+        Console.Clear();
+        Corridor6();
+    }
+    else if (nuvaranderum == "Corridor7")
+    {
+        Console.Clear();
+        Corridor7();
+    }
+    else if (nuvaranderum == "Corridor8")
+    {
+        Console.Clear();
+        Corridor8();
+    }
+    else if (nuvaranderum == "Corridor9")
+    {
+        Console.Clear();
+        Corridor9();
+    }
+    else if (nuvaranderum == "Corridor10")
+    {
+        Console.Clear();
+        Corridor10();
+    }
+    else if (nuvaranderum == "Corridor11")
+    {
+        Console.Clear();
+        Corridor11();
+    }
+    else if (nuvaranderum == "Corridor12")
+    {
+        Console.Clear();
+        Corridor12();
+    }
+    else if (nuvaranderum == "Corridor13")
+    {
+        Console.Clear();
+        Corridor13();
+    }
+    else if (nuvaranderum == "Corridor14")
+    {
+        Console.Clear();
+        Corridor14();
+    }
+    else if (nuvaranderum == "Corridor15")
+    {
+        Console.Clear();
+        Corridor15();
+    }
+    else if (nuvaranderum == "Corridor16")
+    {
+        Console.Clear();
+        Corridor16();
+    }
+    else if (nuvaranderum == "Corridor17")
+    {
+        Console.Clear();
+        Corridor17();
+    }
+    else if (nuvaranderum == "Corridor18")
+    {
+        Console.Clear();
+        Corridor18();
+    }
+    else if (nuvaranderum == "Corridor19")
+    {
+        Console.Clear();
+        Corridor19();
+    }
+    else if (nuvaranderum == "Corridor20")
+    {
+        Console.Clear();
+        Corridor20();
+    }
+    else if (nuvaranderum == "Corridor21")
+    {
+        Console.Clear();
+        Corridor21();
+    }
 }
 
 
 
 
-void flygner1()
+void Flygner1()
 {
     Console.WriteLine("Du vaknar upp i din stol");
     Console.WriteLine("Du undrar var du är, vad hände");
@@ -161,8 +194,19 @@ void flygner1()
     Console.WriteLine("");
     Console.WriteLine("Tryck på space för att fortsätta");
     Console.ReadKey();
+    nuvaranderum = "Corridor1";
 }
 void Flygner2()
+{
+    tidengår();
+    Console.WriteLine("Flygner2");
+
+
+
+
+    Console.ReadLine();
+}
+void tidengår()
 {
     time++;
     if (time == 24)
@@ -170,338 +214,203 @@ void Flygner2()
         time = 0;
         dag++;
     }
-    Console.WriteLine("");
-
-
-
-
-
-
-
-    Console.ReadLine();
+    Mat = -5;
+    vatten = -10;
+    if (Mat > 0)
+    {
+        Deathofstarving();
+    }
+    if (vatten > 0)
+    {
+        Deathofthirst();
+    }
 }
 void Litenflod()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void hem()
+void Hem()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void Storöppnigne()
+void Storöppnign()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
+    Console.WriteLine("Storöppnign");
     Console.ReadLine();
 }
 void Helikopterner()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void orm()
+void Orm()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void storflodkant()
+void Storflodkant()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void evigvägupp()
+void Evigvägupp()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void evigvägner()
+void Evigvägner()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void båt()
+void Båt()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 
 }
-void corridor1()
+void Corridor1()
 {
-    time++;
-    if (time == 24)
-    {
-        time = 0;
-        dag++;
-    }
-    Console.WriteLine("Du är nu i en sort korridor i skogen mellan där planet ligger och en stor öppnign");
+    tidengår();
+    Console.WriteLine("Du är nu i en korridor i skogen mellan där planet ligger och en stor öppnign");
     Console.WriteLine("vill du gå till flygplanet(F) eller vill du gå till den storra öppnignen(Ö)");
 
     val = Console.ReadLine();
     val.ToLower();
     if (val == "f")
     {
-         val = "";
+        val = "";
         nuvaranderum = "Flygner2";
     }
     else if (val == "ö")
     {
-         val = "";
-        nuvaranderum = "Storaöppnign";
+        val = "";
+        nuvaranderum = "Storöppnign";
     }
     else
     {
         val = "";
-        time++;
+        tidengår();
         Console.WriteLine("Du valde inget så du satt bara där i en timme innan du valde att försöka göra något igen");
     }
 
     Console.ReadLine();
 }
-void corridor2()
+void Corridor2()
 {
-    
-
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor3()
+void Corridor3()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor4()
+void Corridor4()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor5()
+void Corridor5()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor6()
+void Corridor6()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor7()
+void Corridor7()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor8()
+void Corridor8()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor9()
+void Corridor9()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor10()
+void Corridor10()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor11()
+void Corridor11()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor12()
+void Corridor12()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor13()
+void Corridor13()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor14()
+void Corridor14()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor15()
+void Corridor15()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor16()
+void Corridor16()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor17()
+void Corridor17()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor18()
+void Corridor18()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor19()
+void Corridor19()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor20()
+void Corridor20()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
-}
+    tidengår();
     Console.ReadLine();
 }
-void corridor21()
+void Corridor21()
 {
-time++;
-if (time == 24)
-{
-    time = 0;
-    dag++;
+    tidengår();
+    Console.ReadLine();
 }
+void Deathofstarving()
+{
+    Console.WriteLine("Du dog av hunger");
+    Console.ReadLine();
+}
+void Deathofthirst()
+{
+    Console.WriteLine("Du dog av turst");
+    Console.ReadLine();
+}
+void Deathofsnake()
+{
+    Console.WriteLine("Du dog av ormen");
     Console.ReadLine();
 }
