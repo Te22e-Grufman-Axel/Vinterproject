@@ -1,11 +1,11 @@
 ﻿int Mat = 100;
 int vatten = 100;
 int dag = 0;
-int time = 12;
+int time = 0;
 
 string val = "";
 String nuvaranderum = "Flygner1";
-while (true)
+while(true)
 {
     if (nuvaranderum == "Flygner1")
     {
@@ -199,7 +199,9 @@ void Flygner1()
 void Flygner2()
 {
     tidengår();
-    Console.WriteLine("Flygner2");
+  Console.WriteLine("Du gick tillbaka till flygplanet");
+  Console.WriteLine("Du bästämer dig för att kolla runt lite");
+  Console.WriteLine("");
 
 
 
@@ -214,13 +216,13 @@ void tidengår()
         time = 0;
         dag++;
     }
-    Mat = -5;
-    vatten = -10;
-    if (Mat > 0)
+    Mat = Mat - 5;
+    vatten = vatten - 10;
+    if (Mat < 0)
     {
         Deathofstarving();
     }
-    if (vatten > 0)
+    if (vatten < 0)
     {
         Deathofthirst();
     }
@@ -277,27 +279,29 @@ void Corridor1()
     tidengår();
     Console.WriteLine("Du är nu i en korridor i skogen mellan där planet ligger och en stor öppnign");
     Console.WriteLine("vill du gå till flygplanet(F) eller vill du gå till den storra öppnignen(Ö)");
+Console.WriteLine(time);
+Console.WriteLine(dag);
+Console.WriteLine(Mat);
+Console.WriteLine(vatten);
 
     val = Console.ReadLine();
     val.ToLower();
     if (val == "f")
     {
         val = "";
-        nuvaranderum = "Flygner2";
+       nuvaranderum = "Flygner2";
     }
     else if (val == "ö")
     {
         val = "";
-        nuvaranderum = "Storöppnign";
+       nuvaranderum = "Storöppnign";
     }
     else
     {
         val = "";
-        tidengår();
         Console.WriteLine("Du valde inget så du satt bara där i en timme innan du valde att försöka göra något igen");
+        Console.ReadLine();
     }
-
-    Console.ReadLine();
 }
 void Corridor2()
 {
