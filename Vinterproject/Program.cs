@@ -3,9 +3,11 @@ int vatten = 100;
 int dag = 0;
 int time = 0;
 
+List<string> Inventory = new List<string>();
+
 string val = "";
-String nuvaranderum = "Flygner1";
-while(true)
+String nuvaranderum = "Flygner2";
+while (true)
 {
     if (nuvaranderum == "Flygner1")
     {
@@ -16,6 +18,11 @@ while(true)
     {
         Console.Clear();
         Flygner2();
+    }
+    else if (nuvaranderum == "Inventory")
+    {
+        Console.Clear();
+        inventory();
     }
     else if (nuvaranderum == "Litenflod")
     {
@@ -170,8 +177,6 @@ while(true)
 }
 
 
-
-
 void Flygner1()
 {
     Console.WriteLine("Du vaknar upp i din stol");
@@ -199,14 +204,26 @@ void Flygner1()
 void Flygner2()
 {
     tidengår();
-  Console.WriteLine("Du gick tillbaka till flygplanet");
-  Console.WriteLine("Du bästämer dig för att kolla runt lite");
-  Console.WriteLine("");
+
+    Console.WriteLine("Du gick tillbaka till flygplanet");
+    Console.WriteLine("Du bästämer dig för att kolla runt lite");
+    Console.WriteLine("Du hittar 2 flaskor vatten och 3 snacks bars när du kollar i matkorgen");
+    Console.WriteLine("Du hittar också 1 Medecin låda i toaleten ");
+    Console.WriteLine("Du hittar också 2 tröjor och 1 par byxor");
 
 
-
-
+    Inventory.Add("1 Vatten");
+    Inventory.Add("1 vatten");
+    Inventory.Add("1 Medecin");
+    Inventory.Add("1 Snacks bar");
+    Inventory.Add("1 Snacks bar");
+    Inventory.Add("1 Snacks bar");
+    Inventory.Add("1 Tröja");
+    Inventory.Add("1 Tröja");
+    Inventory.Add("1 Par byxor");
     Console.ReadLine();
+    Console.Clear();
+    inventory();
 }
 void tidengår()
 {
@@ -279,22 +296,22 @@ void Corridor1()
     tidengår();
     Console.WriteLine("Du är nu i en korridor i skogen mellan där planet ligger och en stor öppnign");
     Console.WriteLine("vill du gå till flygplanet(F) eller vill du gå till den storra öppnignen(Ö)");
-Console.WriteLine(time);
-Console.WriteLine(dag);
-Console.WriteLine(Mat);
-Console.WriteLine(vatten);
+    Console.WriteLine(time);
+    Console.WriteLine(dag);
+    Console.WriteLine(Mat);
+    Console.WriteLine(vatten);
 
     val = Console.ReadLine();
     val.ToLower();
     if (val == "f")
     {
         val = "";
-       nuvaranderum = "Flygner2";
+        nuvaranderum = "Flygner2";
     }
     else if (val == "ö")
     {
         val = "";
-       nuvaranderum = "Storöppnign";
+        nuvaranderum = "Storöppnign";
     }
     else
     {
@@ -306,6 +323,19 @@ Console.WriteLine(vatten);
 void Corridor2()
 {
     tidengår();
+List<string> Corridor2 = new List<string>();
+Corridor2.Add("1 pinne");
+Corridor2.Add("1 pinne");
+Corridor2.Add("1 pinne");
+Corridor2.Add("1 Sten");
+Corridor2.Add("1 Sten");
+
+Console.WriteLine("Du är nu i en corridor någonstans i junglen");
+Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+Console.WriteLine("Skriva 'Back' för att gå tillbaka");
+Console.WriteLine("");
+
+
     Console.ReadLine();
 }
 void Corridor3()
@@ -416,5 +446,77 @@ void Deathofthirst()
 void Deathofsnake()
 {
     Console.WriteLine("Du dog av ormen");
+    Console.ReadLine();
+}
+void inventory()
+{
+    Console.WriteLine("Welcome to the inventory");
+    Console.WriteLine("Items you have:");
+    Console.WriteLine("");
+
+
+    for (int i = 0; i < Inventory.Count; i++)
+    {
+        Console.WriteLine(Inventory[i]);
+    }
+
+
+
+    List<string> Cancraft = new List<string>();
+
+    if (Inventory.Contains("1 Tröja") || Inventory.Contains("1 Par byxor"))
+    {
+        Cancraft.Add("3 Cloth");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("Items du kan crafta:");
+
+    for (int i = 0; i < Cancraft.Count; i++)
+    {
+        Console.WriteLine(Cancraft[i]);
+    }
+
+
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("Skriv 'Back' För att gå tillbaka");
+    Console.WriteLine("Skriv 'Craft' För att crafta");
+    Console.WriteLine("Skriv 'Eat' För att äta");
+    Console.WriteLine("Skriv 'Drink' för att dricka");
+    string val = Console.ReadLine();
+    val.ToLower();
+
+    if (val == "drink" && Inventory.Contains("1 Vatten"))
+    {
+        Inventory.Remove("1 Vatten");
+        if (vatten + 30 <= 100)
+        {
+            vatten = vatten + 30;
+        }
+        else if (vatten + 30 > 100)
+        {
+            vatten = 100;
+        }
+    }
+    if (val == "eat" && Inventory.Contains("1 Snacks bar"))
+    {
+        Inventory.Remove("1 Snacks bar");
+        if (Mat + 20 <= 100)
+        {
+            vatten = vatten + 20;
+        }
+        else if (Mat + 20 > 100)
+        {
+            vatten = 100;
+        }
+    }
+
+
+
+
+
     Console.ReadLine();
 }
