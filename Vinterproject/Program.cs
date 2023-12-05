@@ -6,7 +6,7 @@ int time = 0;
 List<string> Inventory = new List<string>();
 
 string val = "";
-String nuvaranderum = "Flygner2";
+String nuvaranderum = "Corridor2";
 while (true)
 {
     if (nuvaranderum == "Flygner1")
@@ -17,162 +17,194 @@ while (true)
     else if (nuvaranderum == "Flygner2")
     {
         Console.Clear();
-        Flygner2();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Flygner2(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Inventory")
     {
         Console.Clear();
-        inventory();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = inventory(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Litenflod")
     {
         Console.Clear();
-        Litenflod();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Litenflod(Inventory, Mat, vatten);
     }
     else if (nuvaranderum == "Hem")
     {
         Console.Clear();
-        Hem();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Hem(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Storöppnign")
     {
         Console.Clear();
-        Storöppnign();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Storöppnign(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Helikopter")
     {
         Console.Clear();
-        Helikopterner();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Helikopterner(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Orm")
     {
         Console.Clear();
-        Orm();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Orm(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Storflodkant")
     {
         Console.Clear();
-        Storflodkant();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Storflodkant(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Evigvägupp")
     {
         Console.Clear();
-        Evigvägupp();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Evigvägupp(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Evigvägner")
     {
         Console.Clear();
-        Evigvägner();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Evigvägner(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Båt")
     {
         Console.Clear();
-        Båt();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Båt(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor1")
     {
         Console.Clear();
-        Corridor1();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor1(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor2")
     {
         Console.Clear();
-        Corridor2();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor2(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor3")
     {
         Console.Clear();
-        Corridor3();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor3(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor4")
     {
         Console.Clear();
-        Corridor4();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor4(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor5")
     {
         Console.Clear();
-        Corridor5();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor5(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor6")
     {
         Console.Clear();
-        Corridor6();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor6(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor7")
     {
         Console.Clear();
-        Corridor7();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor7(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor8")
     {
         Console.Clear();
-        Corridor8();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor8(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor9")
     {
         Console.Clear();
-        Corridor9();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor9(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor10")
     {
         Console.Clear();
-        Corridor10();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor10(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor11")
     {
         Console.Clear();
-        Corridor11();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor11(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor12")
     {
         Console.Clear();
-        Corridor12();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor12(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor13")
     {
         Console.Clear();
-        Corridor13();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor13(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor14")
     {
         Console.Clear();
-        Corridor14();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor14(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor15")
     {
         Console.Clear();
-        Corridor15();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor15(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor16")
     {
         Console.Clear();
-        Corridor16();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor16(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor17")
     {
         Console.Clear();
-        Corridor17();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor17(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor18")
     {
         Console.Clear();
-        Corridor18();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor18(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor19")
     {
         Console.Clear();
-        Corridor19();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor19(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor20")
     {
         Console.Clear();
-        Corridor20();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor20(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Corridor21")
     {
         Console.Clear();
-        Corridor21();
+        tidengår();
+        (nuvaranderum, Mat, vatten) = Corridor21(Inventory, Mat, vatten, nuvaranderum);
     }
 }
 
@@ -191,7 +223,6 @@ void Flygner1()
     Console.WriteLine("Du tar dig ur flygplanet och ser att du är i en jungel");
     Console.WriteLine("Du ser en väg genom träden och väljer att följa den");
 
-
     Console.WriteLine("");
     Console.WriteLine("");
     Console.WriteLine("");
@@ -201,16 +232,13 @@ void Flygner1()
     Console.ReadKey();
     nuvaranderum = "Corridor1";
 }
-void Flygner2()
+static (string, int, int) Flygner2(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
-
     Console.WriteLine("Du gick tillbaka till flygplanet");
     Console.WriteLine("Du bästämer dig för att kolla runt lite");
     Console.WriteLine("Du hittar 2 flaskor vatten och 3 snacks bars när du kollar i matkorgen");
     Console.WriteLine("Du hittar också 1 Medecin låda i toaleten ");
     Console.WriteLine("Du hittar också 2 tröjor och 1 par byxor");
-
 
     Inventory.Add("1 Vatten");
     Inventory.Add("1 vatten");
@@ -223,7 +251,8 @@ void Flygner2()
     Inventory.Add("1 Par byxor");
     Console.ReadLine();
     Console.Clear();
-    inventory();
+    nuvaranderum = "Corridor1";
+    return (nuvaranderum, mat, vatten);
 }
 void tidengår()
 {
@@ -244,62 +273,57 @@ void tidengår()
         Deathofthirst();
     }
 }
-void Litenflod()
+static (string, int, int) Litenflod(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Hem()
+static (string, int, int) Hem(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Storöppnign()
+static (string, int, int) Storöppnign(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.WriteLine("Storöppnign");
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Helikopterner()
+static (string, int, int) Helikopterner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Orm()
+static (string, int, int) Orm(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Storflodkant()
+static (string, int, int) Storflodkant(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Evigvägupp()
+static (string, int, int) Evigvägupp(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Evigvägner()
+static (string, int, int) Evigvägner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Båt()
+static (string, int, int) Båt(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
-
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor1()
+static (string, int, int) Corridor1(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
+    string val = "";
     Console.WriteLine("Du är nu i en korridor i skogen mellan där planet ligger och en stor öppnign");
     Console.WriteLine("vill du gå till flygplanet(F) eller vill du gå till den storra öppnignen(Ö)");
-    Console.WriteLine(time);
-    Console.WriteLine(dag);
-    Console.WriteLine(Mat);
-    Console.WriteLine(vatten);
 
     val = Console.ReadLine();
     val.ToLower();
@@ -319,119 +343,164 @@ void Corridor1()
         Console.WriteLine("Du valde inget så du satt bara där i en timme innan du valde att försöka göra något igen");
         Console.ReadLine();
     }
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor2()
-{
-    tidengår();
-List<string> Corridor2 = new List<string>();
-Corridor2.Add("1 pinne");
-Corridor2.Add("1 pinne");
-Corridor2.Add("1 pinne");
-Corridor2.Add("1 Sten");
-Corridor2.Add("1 Sten");
 
-Console.WriteLine("Du är nu i en corridor någonstans i junglen");
-Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
-Console.WriteLine("Skriva 'Back' för att gå tillbaka");
-Console.WriteLine("");
+static (string, int, int) Corridor2(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+{
+    String Val = "";
 
+    List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+    Corridor2.Add("1 pinne");
+    Corridor2.Add("1 pinne");
+    Corridor2.Add("1 pinne");
+    Corridor2.Add("1 Sten");
+    Corridor2.Add("1 Sten");
 
+    Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
+    Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+    Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
+    Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
+    Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+    while (nuvaranderum == "Corridor2")
+    {
+        Val = Console.ReadLine();
+        Val.ToLower();
+
+        if (Val == "leta")
+        {
+            Console.WriteLine("Du hittade:");      //om man väljer att leta
+            for (int i = 0; i < Corridor2.Count; i++)
+            {
+                Console.WriteLine(Corridor2[i]);
+                Inventory.Add(Corridor2[i]);
+            }
+
+            Val = "";
+        }
+        else if (Val == "inventory")
+        {
+            Console.Clear();      //Om man vill öppna inventoriet
+            (mat, vatten) = inventory(Inventory, mat, vatten);
+            Val = "";
+        }
+        else if (Val == "back")
+        {
+            nuvaranderum = "";
+
+        }
+        else if (Val == "höger")       //Dom olika hållen man kan gå
+        {
+            nuvaranderum = "";
+        }
+        else if (Val == "vänster")
+        {
+            nuvaranderum = "";
+        }
+        else if (Val == "framåt")
+        {
+            nuvaranderum = "";
+        }
+
+    }
+    // ---------------------------------------------------------------------------------------
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor3()
+static (string, int, int) Corridor3(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor4()
+static (string, int, int) Corridor4(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor5()
+static (string, int, int) Corridor5(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor6()
+static (string, int, int) Corridor6(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor7()
+static (string, int, int) Corridor7(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor8()
+static (string, int, int) Corridor8(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor9()
+static (string, int, int) Corridor9(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor10()
+static (string, int, int) Corridor10(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor11()
+static (string, int, int) Corridor11(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor12()
+static (string, int, int) Corridor12(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor13()
+static (string, int, int) Corridor13(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor14()
+static (string, int, int) Corridor14(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor15()
+static (string, int, int) Corridor15(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor16()
+static (string, int, int) Corridor16(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor17()
+static (string, int, int) Corridor17(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor18()
+static (string, int, int) Corridor18(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor19()
+static (string, int, int) Corridor19(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor20()
+static (string, int, int) Corridor20(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
-void Corridor21()
+static (string, int, int) Corridor21(List<string> Inventory, int mat, int vatten, string nuvaranderum)
 {
-    tidengår();
     Console.ReadLine();
+    return (nuvaranderum, mat, vatten);
 }
 void Deathofstarving()
 {
@@ -448,23 +517,23 @@ void Deathofsnake()
     Console.WriteLine("Du dog av ormen");
     Console.ReadLine();
 }
-void inventory()
+static (int, int) inventory(List<string> inventory, int vatten, int mat)
 {
     Console.WriteLine("Welcome to the inventory");
     Console.WriteLine("Items you have:");
     Console.WriteLine("");
 
 
-    for (int i = 0; i < Inventory.Count; i++)
+    for (int i = 0; i < inventory.Count; i++)
     {
-        Console.WriteLine(Inventory[i]);
+        Console.WriteLine(inventory[i]);
     }
 
 
 
     List<string> Cancraft = new List<string>();
 
-    if (Inventory.Contains("1 Tröja") || Inventory.Contains("1 Par byxor"))
+    if (inventory.Contains("1 Tröja") || inventory.Contains("1 Par byxor"))
     {
         Cancraft.Add("3 Cloth");
     }
@@ -489,9 +558,9 @@ void inventory()
     string val = Console.ReadLine();
     val.ToLower();
 
-    if (val == "drink" && Inventory.Contains("1 Vatten"))
+    if (val == "drink" && inventory.Contains("1 Vatten"))
     {
-        Inventory.Remove("1 Vatten");
+        inventory.Remove("1 Vatten");
         if (vatten + 30 <= 100)
         {
             vatten = vatten + 30;
@@ -501,14 +570,14 @@ void inventory()
             vatten = 100;
         }
     }
-    if (val == "eat" && Inventory.Contains("1 Snacks bar"))
+    if (val == "eat" && inventory.Contains("1 Snacks bar"))
     {
-        Inventory.Remove("1 Snacks bar");
-        if (Mat + 20 <= 100)
+        inventory.Remove("1 Snacks bar");
+        if (mat + 20 <= 100)
         {
             vatten = vatten + 20;
         }
-        else if (Mat + 20 > 100)
+        else if (mat + 20 > 100)
         {
             vatten = 100;
         }
@@ -519,4 +588,6 @@ void inventory()
 
 
     Console.ReadLine();
+
+    return (mat, vatten);
 }
