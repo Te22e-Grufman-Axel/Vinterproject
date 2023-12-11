@@ -5,7 +5,7 @@ int time = 0;
 
 List<string> Inventory = new List<string>();
 
-String nuvaranderum = "Corridor2";
+String nuvaranderum = "Corridor18";
 while (true)
 {
     if (nuvaranderum == "Flygner1")

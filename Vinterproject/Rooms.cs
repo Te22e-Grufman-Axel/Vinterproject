@@ -19,7 +19,7 @@ class Rooms
         Inventory.Add("1 Par byxor");
         Console.ReadLine();
         Console.Clear();
-        nuvaranderum = "Corridor1";
+        nuvaranderum = "Corridor";
         return (nuvaranderum, mat, vatten);
     }
     // -------------------------------------------------------------------------------------------------------------------------
@@ -82,17 +82,22 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor1 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor1.Add("1 pinne");
-        Corridor1.Add("1 Sten");
-        Corridor1.Add("1 Sten");
-        Corridor1.Add("1 Tröja");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Tröja");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Snacks bar");
+        Corridor.Add("1 Snacks bar");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        while (nuvaranderum == "Corridor1")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -100,10 +105,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor1.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor1[i]);
-                    Inventory.Add(Corridor1[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -116,11 +121,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Flygner2";
             }                              //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Storöppnign";
             }
             else
             {
@@ -136,12 +141,9 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
@@ -156,10 +158,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -172,15 +174,15 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Storöppnign";
             }
             else if (Val == "höger")       //Dom olika hållen man kan gå
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor4";
             }
             else if (Val == "vänster")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor3";
             }
             else
             {
@@ -196,18 +198,19 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor3 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor3.Add("1 pinne");
-        Corridor3.Add("1 pinne");
-        Corridor3.Add("1 pinne");
-        Corridor3.Add("1 Sten");
-        Corridor3.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Snacks bar");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        while (nuvaranderum == "Corridor3")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -215,10 +218,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor3.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor3[i]);
-                    Inventory.Add(Corridor3[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -231,11 +234,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor2";
             }                                      //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Helikopter";
             }
             else
             {
@@ -251,18 +254,18 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor4 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor4.Add("1 pinne");
-        Corridor4.Add("1 pinne");
-        Corridor4.Add("1 pinne");
-        Corridor4.Add("1 Sten");
-        Corridor4.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Par byxor");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        while (nuvaranderum == "Corridor4")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -270,10 +273,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor4.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor4[i]);
-                    Inventory.Add(Corridor4[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -286,11 +289,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor2";
             }                                 //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Orm";
             }
             else
             {
@@ -306,18 +309,19 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor5 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor5.Add("1 pinne");
-        Corridor5.Add("1 pinne");
-        Corridor5.Add("1 pinne");
-        Corridor5.Add("1 Sten");
-        Corridor5.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Vatten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor5");
+        while (nuvaranderum == "Corridor5")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -325,10 +329,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor5.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor5[i]);
-                    Inventory.Add(Corridor5[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -341,11 +345,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Orm";
             }                                            //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor6";
             }
             else
             {
@@ -361,18 +365,20 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor6 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor6.Add("1 pinne");
-        Corridor6.Add("1 pinne");
-        Corridor6.Add("1 pinne");
-        Corridor6.Add("1 Sten");
-        Corridor6.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Tröja");
+        Corridor.Add("1 Vatten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor6");
+        while (nuvaranderum == "Corridor6")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -380,10 +386,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor6.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor6[i]);
-                    Inventory.Add(Corridor6[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -396,11 +402,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor5";
             }                           //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor7";
             }
             else
             {
@@ -416,19 +422,20 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor7 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor7.Add("1 pinne");
-        Corridor7.Add("1 pinne");
-        Corridor7.Add("1 pinne");
-        Corridor7.Add("1 Sten");
-        Corridor7.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Medecin");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor7");
+        while (nuvaranderum == "Corridor7")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -436,10 +443,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor7.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor7[i]);
-                    Inventory.Add(Corridor7[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -452,19 +459,19 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor6";
             }
             else if (Val == "höger")       //Dom olika hållen man kan gå
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor8";
             }
             else if (Val == "vänster")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor17";
             }
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor15";
             }
             else
             {
@@ -480,19 +487,21 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Snacks bar");
+        Corridor.Add("1 Vatten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor8");
+        while (nuvaranderum == "Corridor8")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -500,10 +509,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -516,15 +525,15 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor7";
             }                              //Dom olika hållen man kan gå
             else if (Val == "vänster")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor10";
             }
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor9";
             }
             else
             {
@@ -540,19 +549,21 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor9 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor9.Add("1 pinne");
-        Corridor9.Add("1 pinne");
-        Corridor9.Add("1 pinne");
-        Corridor9.Add("1 Sten");
-        Corridor9.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Tröja");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Snacks bar");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Du är i en återvändsgränd så ända du kan göra är att gå tillbacka");
         Console.WriteLine("Skrive 'Back' för att gå tillbaka");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor9");
+        while (nuvaranderum == "Corridor9")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -560,10 +571,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor9.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor9[i]);
-                    Inventory.Add(Corridor9[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -576,7 +587,7 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor8";
             }                            //Dom olika hållen man kan gå
             else
             {
@@ -592,18 +603,17 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor10 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor10.Add("1 pinne");
-        Corridor10.Add("1 pinne");
-        Corridor10.Add("1 pinne");
-        Corridor10.Add("1 Sten");
-        Corridor10.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Medecin");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor10");
+        while (nuvaranderum == "Corridor10")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -611,10 +621,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor10.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor10[i]);
-                    Inventory.Add(Corridor10[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -627,11 +637,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor8";
             }                         //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor11";
             }
             else
             {
@@ -647,19 +657,20 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor11 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor11.Add("1 pinne");
-        Corridor11.Add("1 pinne");
-        Corridor11.Add("1 pinne");
-        Corridor11.Add("1 Sten");
-        Corridor11.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor11");
+        while (nuvaranderum == "Corridor11")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -667,10 +678,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor11.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor11[i]);
-                    Inventory.Add(Corridor11[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -683,15 +694,15 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor10";
             }
             else if (Val == "höger")       //Dom olika hållen man kan gå
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor19";
             }
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor11";
             }
             else
             {
@@ -707,18 +718,15 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor12 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor12.Add("1 pinne");
-        Corridor12.Add("1 pinne");
-        Corridor12.Add("1 pinne");
-        Corridor12.Add("1 Sten");
-        Corridor12.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor12");
+        while (nuvaranderum == "Corridor12")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -726,10 +734,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor12.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor12[i]);
-                    Inventory.Add(Corridor12[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -742,11 +750,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor11";
             }                           //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor13";
             }
             else
             {
@@ -762,19 +770,16 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor13");
+        while (nuvaranderum == "Corridor13")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -782,10 +787,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -798,19 +803,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor12";
+            }                            //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor14";
             }
             else
             {
@@ -826,19 +823,19 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Vatten");
+        Corridor.Add("1 Tröja");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
+        Console.WriteLine("Skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor14");
+        while (nuvaranderum == "Corridor14")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -846,10 +843,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -862,19 +859,15 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor13";
+            }                        //Dom olika hållen man kan gå
             else if (Val == "vänster")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor15";
             }
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor16";
             }
             else
             {
@@ -890,19 +883,16 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor15");
+        while (nuvaranderum == "Corridor15")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -910,10 +900,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -926,19 +916,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor14";
+            }                        //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor7";
             }
             else
             {
@@ -954,19 +936,18 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor16");
+        while (nuvaranderum == "Corridor16")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -974,10 +955,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -990,19 +971,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor14";
+            }                           //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor18";
             }
             else
             {
@@ -1018,19 +991,20 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Snacks bar");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor17");
+        while (nuvaranderum == "Corridor17")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -1038,10 +1012,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -1054,19 +1028,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor18";
+            }                            //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor7";
             }
             else
             {
@@ -1082,19 +1048,24 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Snacks bar");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
-        Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
+        Console.WriteLine("Skriva 'Back' för att gå tillbaka");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor18");
+        while (nuvaranderum == "Corridor18")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -1102,10 +1073,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -1118,19 +1089,15 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Storöppnign";
             }
             else if (Val == "höger")       //Dom olika hållen man kan gå
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor17";
             }
             else if (Val == "vänster")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "framåt")
-            {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor16";
             }
             else
             {
@@ -1138,7 +1105,7 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
+        Console.ReadKey();
         return (nuvaranderum, mat, vatten);
     }
     // -------------------------------------------------------------------------------------------------------------------------
@@ -1146,19 +1113,19 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor19");
+        while (nuvaranderum == "Corridor19")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -1166,10 +1133,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -1182,19 +1149,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor11";
+            }                          //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor20";
             }
             else
             {
@@ -1210,19 +1169,19 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor20");
+        while (nuvaranderum == "Corridor20")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -1230,10 +1189,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -1246,19 +1205,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor19";
+            }                                //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Corridor21";
             }
             else
             {
@@ -1274,19 +1225,20 @@ class Rooms
     {
         String Val = "";
 
-        List<string> Corridor2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 pinne");
-        Corridor2.Add("1 Sten");
-        Corridor2.Add("1 Sten");
+        List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 pinne");
+        Corridor.Add("1 Sten");
+        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        while (nuvaranderum == "Corridor2")
+        Console.WriteLine("Corridor21");
+        while (nuvaranderum == "Corridor21")
         {
             Val = Console.ReadLine();
             Val.ToLower();
@@ -1294,10 +1246,10 @@ class Rooms
             if (Val == "leta")
             {
                 Console.WriteLine("Du hittade:");      //om man väljer att leta
-                for (int i = 0; i < Corridor2.Count; i++)
+                for (int i = 0; i < Corridor.Count; i++)
                 {
-                    Console.WriteLine(Corridor2[i]);
-                    Inventory.Add(Corridor2[i]);
+                    Console.WriteLine(Corridor[i]);
+                    Inventory.Add(Corridor[i]);
                 }
 
                 Val = "";
@@ -1310,19 +1262,11 @@ class Rooms
             }
             else if (Val == "back")
             {
-                nuvaranderum = "";
-            }
-            else if (Val == "höger")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "";
-            }
-            else if (Val == "vänster")
-            {
-                nuvaranderum = "";
-            }
+                nuvaranderum = "Corridor20";
+            }                                //Dom olika hållen man kan gå
             else if (Val == "framåt")
             {
-                nuvaranderum = "";
+                nuvaranderum = "Storflodkant";
             }
             else
             {
