@@ -2,24 +2,61 @@ class Rooms
 {
     public static (string, int, int) Flygner2(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
-        Console.WriteLine("Du gick tillbaka till flygplanet");
-        Console.WriteLine("Du bästämer dig för att kolla runt lite");
-        Console.WriteLine("Du hittar 2 flaskor vatten och 3 snacks bars när du kollar i matkorgen");
-        Console.WriteLine("Du hittar också 1 Medecin låda i toaleten ");
-        Console.WriteLine("Du hittar också 2 tröjor och 1 par byxor");
+        String Val = "";
 
-        Inventory.Add("1 Vatten");
-        Inventory.Add("1 vatten");
-        Inventory.Add("1 Medecin");
-        Inventory.Add("1 Snacks bar");
-        Inventory.Add("1 Snacks bar");
-        Inventory.Add("1 Snacks bar");
-        Inventory.Add("1 Tröja");
-        Inventory.Add("1 Tröja");
-        Inventory.Add("1 Par byxor");
+        List<string> flygner2 = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        flygner2.Add("1 pinne");
+        flygner2.Add("1 Sten");
+        flygner2.Add("1 Sten");
+        flygner2.Add("1 Tröja");
+        flygner2.Add("1 Tröja");
+        flygner2.Add("1 Tröja");
+        flygner2.Add("1 Vatten");
+        flygner2.Add("1 Vatten");
+        flygner2.Add("1 Vatten");
+        flygner2.Add("1 Snacks bar");
+        flygner2.Add("1 Snacks bar");
+        flygner2.Add("1 Par byxor");
+        flygner2.Add("1 Par byxor");
+        flygner2.Add("1 Par byxor");
+
+        Console.WriteLine("Du är nu tillbaka vid flygplanet");  //lite text som bärätar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Skriva 'Back' för att gå tillbaka");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        while (nuvaranderum == "Flygner2")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "leta")
+            {
+                Console.WriteLine("Du hittade:");      //om man väljer att leta
+                for (int i = 0; i < flygner2.Count; i++)
+                {
+                    Console.WriteLine(flygner2[i]);
+                    Inventory.Add(flygner2[i]);
+                }
+
+                Val = "";
+            }
+            else if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "back")
+            {
+                nuvaranderum = "Corridor1";
+            }                              //Dom olika hållen man kan gå
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
         Console.ReadLine();
-        Console.Clear();
-        nuvaranderum = "Corridor";
         return (nuvaranderum, mat, vatten);
     }
     // -------------------------------------------------------------------------------------------------------------------------
@@ -50,6 +87,140 @@ class Rooms
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Orm(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
+
+        Random Skada = new Random();
+        Random misschans = new Random();
+        Random aitypavattack = new Random();
+
+        int spelareHP = 100;
+        int aihp = 100;
+        int maxskadaspelaren = 35;
+        int maxskadaai = 35;
+        int lightattackmisschansplayer = 20;
+        int hardattackmisschansplayer = 40;
+        int lightattackmisschansai = 20;
+        int hardattackmisschansai = 40;
+        int nuvaranespelarhp = spelareHP;
+        int nuvaraneaihp = aihp;
+        int tmpaitypavattack = aitypavattack.Next(2);
+
+        String spelaretypavattack = "";          //massa variablar
+
+        while (aihp > 0)
+        {
+            Console.WriteLine("Du gick in i ett stort runt rum i jungen");
+            Console.WriteLine("Och du ser en motor i mitten");
+            Console.WriteLine("Undrar hur den kom dit");
+            Console.WriteLine("När du går fram för att ta blir du slagen av något och kastas bakåt");
+            Console.WriteLine("Du ser att det är en stor orm framför dig");
+            Console.WriteLine("Och do kommer fram till att du inte kan fly utan måste slåss");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Vad vill du göra?");
+            Console.WriteLine("Hard attack'H', Light attack'L' eller försöka fly'F'");
+
+            spelaretypavattack = Console.ReadLine();
+            spelaretypavattack = spelaretypavattack.ToLower();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            // ------------------------------------------------------------------
+            if (spelaretypavattack == "l")
+            {
+                int tempmisschans = misschans.Next(100);
+                if (tempmisschans <= lightattackmisschansplayer)
+                {
+                    Console.WriteLine("Du försökte göra en lätt attack men missade fienden.");
+                }
+                else                        //spelaren lightattack kod
+                {
+                    int spelaredamage = Skada.Next(maxskadaspelaren);
+                    nuvaraneaihp -= spelaredamage;
+                    Console.WriteLine("Du attakerar ormen med en light attack och gör " + spelaredamage + " i skada");
+                    Console.WriteLine("ormen har nu " + nuvaraneaihp + " i liv(hp).");
+                }
+            }
+            // ------------------------------------------------------------------
+            else if (spelaretypavattack == "h")
+            {
+
+                int tempmisschans = misschans.Next(100);
+                if (tempmisschans <= hardattackmisschansplayer)
+                {
+                    Console.WriteLine("Du försöker göra en svår attack men missade fienden");
+                }
+                else                //Spelaren hardattack kod
+                {
+                    int spelaredamage = Skada.Next(2 * maxskadaspelaren);
+                    nuvaraneaihp -= spelaredamage;
+                    Console.WriteLine("Du attackerar ormen med en svår attack och gör " + spelaredamage + " i skada");
+                    Console.WriteLine("Ormen har nu " + nuvaraneaihp + " i liv(hp).");
+                }
+            }
+            // ------------------------------------------------------------------
+            else                 //om man inte slår
+            {
+                Console.WriteLine("Du valde inget så du slår ingen.");
+            }
+            // ------------------------------------------------------------------
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            if (tmpaitypavattack >= 0)
+            {
+                int tempmisschans = misschans.Next(100);
+                if (tempmisschans <= lightattackmisschansai)
+                {
+                    Console.WriteLine("Ormen försökta göra en lätt attack men missade dig.");
+                }
+                else                        //ai lightattack kod
+                {
+                    int aidamage = Skada.Next(maxskadaai);
+                    nuvaranespelarhp -= aidamage;
+                    Console.WriteLine("Ormen attackerar dig med en lättattack och gör " + aidamage + " i skada");
+                    Console.WriteLine("Du har nu " + nuvaranespelarhp + " i liv(hp).");
+                }
+            }
+            // ------------------------------------------------------------------
+            else if (tmpaitypavattack <= 1)
+            {
+                int tempmisschans = misschans.Next(100);
+                if (tempmisschans <= hardattackmisschansai)
+                {
+                    Console.WriteLine("Ormen försökte göra en svår attack men missade dig");
+                }
+                else                   //ai hardattack kod
+                {
+                    int aidamage = Skada.Next(2 * maxskadaai);
+                    nuvaranespelarhp -= aidamage;
+                    Console.WriteLine("Ormen attackerar dig med en svår attack och gör " + aidamage + " i skada");
+                    Console.WriteLine("Du har nu " + nuvaranespelarhp + " i liv(hp).");
+                }
+            }
+            if (aihp < 0 && spelareHP < 0)
+            {
+                Death.snake();
+            }
+            else if (spelareHP < 0)
+            {
+                Death.snake();
+            }
+            else if (aihp < 0 && spelareHP > 0)
+            {
+                Console.WriteLine("Du dödade ormen");
+            }
+
+        }
+
+
+
+
+
+
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
     }
@@ -1116,8 +1287,6 @@ class Rooms
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
-        Corridor.Add("1 pinne");
-        Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
@@ -1170,8 +1339,6 @@ class Rooms
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
-        Corridor.Add("1 pinne");
-        Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
@@ -1227,10 +1394,6 @@ class Rooms
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
-        Corridor.Add("1 pinne");
-        Corridor.Add("1 pinne");
-        Corridor.Add("1 Sten");
-        Corridor.Add("1 Sten");
 
         Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");

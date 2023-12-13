@@ -5,7 +5,7 @@ int time = 0;
 
 List<string> Inventory = new List<string>();
 
-String nuvaranderum = "Corridor18";
+String nuvaranderum = "Orm";
 while (true)
 {
     if (nuvaranderum == "Flygner1")
@@ -244,28 +244,11 @@ void tidengår()
     vatten = vatten - 10;
     if (Mat < 0)
     {
-        Deathofstarving();
+        Death.starving();
     }
     if (vatten < 0)
     {
-        Deathofthirst();
+        Death.thirst();
     }
-}
-// -------------------------------------------------------------------------------------------------------------------------
-static void Deathofstarving()
-{
-    Console.WriteLine("Du dog av hunger");
-    Console.ReadLine();
-}
-// -------------------------------------------------------------------------------------------------------------------------
-static void Deathofthirst()
-{
-    Console.WriteLine("Du dog av turst");
-    Console.ReadLine();
-}
-// -------------------------------------------------------------------------------------------------------------------------
-static void Deathofsnake()
-{
-    Console.WriteLine("Du dog av ormen");
-    Console.ReadLine();
+     // -------------------------------------------------------------------------------------------------------------------------
 }
