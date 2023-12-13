@@ -104,16 +104,19 @@ class Rooms
         int nuvaraneaihp = aihp;
         int tmpaitypavattack = aitypavattack.Next(2);
 
-        String spelaretypavattack = "";          //massa variablar
 
-        while (aihp > 0)
+        String spelaretypavattack = "";          //massa variablar
+        string ormlever = "ja";
+
+        Console.WriteLine("Du gick in i ett stort runt rum i jungen");
+        Console.WriteLine("Och du ser en motor i mitten");
+        Console.WriteLine("Undrar hur den kom dit");
+        Console.WriteLine("När du går fram för att ta blir du slagen av något och kastas bakåt");
+        Console.WriteLine("Du ser att det är en stor orm framför dig");
+        Console.WriteLine("Och do kommer fram till att du inte kan fly utan måste slåss");
+        while (ormlever == "ja")
         {
-            Console.WriteLine("Du gick in i ett stort runt rum i jungen");
-            Console.WriteLine("Och du ser en motor i mitten");
-            Console.WriteLine("Undrar hur den kom dit");
-            Console.WriteLine("När du går fram för att ta blir du slagen av något och kastas bakåt");
-            Console.WriteLine("Du ser att det är en stor orm framför dig");
-            Console.WriteLine("Och do kommer fram till att du inte kan fly utan måste slåss");
+
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Vad vill du göra?");
@@ -211,8 +214,8 @@ class Rooms
             else if (aihp < 0 && spelareHP > 0)
             {
                 Console.WriteLine("Du dödade ormen");
+                ormlever = "nej";
             }
-
         }
 
 
