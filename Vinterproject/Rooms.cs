@@ -102,7 +102,9 @@ class Rooms
         int hardattackmisschansai = 40;
         int nuvaranespelarhp = spelareHP;
         int nuvaraneaihp = aihp;
-        int tmpaitypavattack = aitypavattack.Next(2);
+
+        bool VaritHärTidigare = false;
+
 
 
         String spelaretypavattack = "";          //massa variablar
@@ -113,9 +115,11 @@ class Rooms
         Console.WriteLine("Undrar hur den kom dit");
         Console.WriteLine("När du går fram för att ta blir du slagen av något och kastas bakåt");
         Console.WriteLine("Du ser att det är en stor orm framför dig");
-        Console.WriteLine("Och do kommer fram till att du inte kan fly utan måste slåss");
+        Console.WriteLine("Och då kommer fram till att du inte kan fly utan måste slåss");
         while (ormlever == "ja")
         {
+
+            int tmpaitypavattack = aitypavattack.Next(2);
 
             Console.WriteLine("");
             Console.WriteLine("");
@@ -203,21 +207,56 @@ class Rooms
                     Console.WriteLine("Du har nu " + nuvaranespelarhp + " i liv(hp).");
                 }
             }
-            if (aihp < 0 && spelareHP < 0)
+
+            if (nuvaraneaihp <= 0 && nuvaranespelarhp <= 0)
             {
                 Death.snake();
             }
-            else if (spelareHP < 0)
+            else if (nuvaranespelarhp <= 0)
             {
                 Death.snake();
             }
-            else if (aihp < 0 && spelareHP > 0)
+            else if (nuvaraneaihp <= 0)
             {
-                Console.WriteLine("Du dödade ormen");
-                ormlever = "nej";
+                ormlever = "Nej";
             }
         }
+        if (ormlever == "Nej")
+        {
+            if (VaritHärTidigare == false)
+            {
+                Console.WriteLine("");
+                
+                Console.WriteLine("Du lyckades döda ormen");
+                Console.WriteLine("Du går först och hämtar motorn som låg i mitten");
+                Console.WriteLine("Kanse kan du andvända den för att fly härifrån");
+                Inventory.Add("1 Motor");
+                Console.WriteLine("Sen kommer du på att du kanse kan äta ormen för mat");
+                Console.WriteLine("Så du tar ut din kniv och hackar Ormen i mindre delar");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
+                Inventory.Add("1 Ormbit");
 
+
+
+
+                VaritHärTidigare = true;
+            }
+            else if (VaritHärTidigare == true)
+            {
+
+            }
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("WTF, kontakta Axel för att fixa problemet");
+            Console.ReadLine();
+        }
 
 
 
@@ -328,6 +367,7 @@ class Rooms
         {
             Val = Console.ReadLine();
             Val.ToLower();
+            Console.ReadLine();
 
             if (Val == "leta")
             {
@@ -1516,4 +1556,5 @@ class Rooms
 
         return (nuvaranderum, mat, vatten);
     }
+
 }
