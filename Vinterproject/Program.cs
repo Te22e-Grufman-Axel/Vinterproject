@@ -5,7 +5,7 @@ int time = 0;
 
 List<string> Inventory = new List<string>();
 
-String nuvaranderum = "Orm";
+String nuvaranderum = "Storflodkant";
 while (true)
 {
     if (nuvaranderum == "Flygner1")
@@ -18,12 +18,6 @@ while (true)
         Console.Clear();
         tidengår();
         (nuvaranderum, Mat, vatten) = Rooms.Flygner2(Inventory, Mat, vatten, nuvaranderum);
-    }
-    else if (nuvaranderum == "Inventory")
-    {
-        Console.Clear();
-        tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.inventory(Inventory, Mat, vatten, nuvaranderum);
     }
     else if (nuvaranderum == "Litenflod")
     {
@@ -204,6 +198,18 @@ while (true)
         Console.Clear();
         tidengår();
         (nuvaranderum, Mat, vatten) = Rooms.Corridor21(Inventory, Mat, vatten, nuvaranderum);
+    }
+    else if(nuvaranderum == "EvigVägUpp2")
+    {
+        Console.Clear();
+        tidengår();
+         (nuvaranderum, Mat) = Rooms.EvigVägUpp2(Mat, nuvaranderum);
+    }
+    else if(nuvaranderum == "EvigVägNer2")
+    {
+        Console.Clear();
+        tidengår();
+        (nuvaranderum, Mat) = Rooms.EvigVägNer2(Mat, nuvaranderum);
     }
 }
 

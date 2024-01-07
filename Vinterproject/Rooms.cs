@@ -74,13 +74,130 @@ class Rooms
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Storöppnign(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
-        Console.WriteLine("Storöppnign");
+
+        String Val = "";
+
+        List<string> Storöppnign = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Storöppnign.Add("1 pinne");
+
+
+        Console.WriteLine("Du är nu i en stor öppnign någonstans i junglen");  //lite text som bärätar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Skriv 'Flod' för att gå till floden");
+        Console.WriteLine("Skriv 'Liten öppning' för att gå till en liten öppning");
+        Console.WriteLine("Skriv 'Flygplan' för att gå till flygplanet");
+        Console.WriteLine("Skriv 'Neråt' för att gå neråt eller skriv 'Höger' för att gå till höger");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        while (nuvaranderum == "Storöppnign")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "leta")
+            {
+                Console.WriteLine("Du hittade:");      //om man väljer att leta
+                for (int i = 0; i < Storöppnign.Count; i++)
+                {
+                    Console.WriteLine(Storöppnign[i]);
+                    Inventory.Add(Storöppnign[i]);
+                }
+                for (int i = 0; i < Storöppnign.Count; i++)
+                {
+                    Storöppnign.RemoveAt(i);
+                }
+                Val = "";
+            }
+            else if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "flod")
+            {
+                nuvaranderum = "Litenflod";
+            }
+            else if (Val == "liten öppning")       //Dom olika hållen man kan gå
+            {
+                nuvaranderum = "Hem";
+            }
+            else if (Val == "flygplan")
+            {
+                nuvaranderum = "Corridor1";
+            }
+            else if (Val == "neråt")
+            {
+                nuvaranderum = "Corridor2";
+            }
+            else if (Val == "höger")
+            {
+                nuvaranderum = "Corridor18";
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
+
+
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
     }
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Helikopterner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
+        String Val = "";
+
+        List<string> Helikopter = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Helikopter.Add("1 spak");
+        Helikopter.Add("1 knapp");
+
+
+        Console.WriteLine("Du hittade en helikopter som har krashat");
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");        //lite text som bärätar vad du kan göra
+
+        while (nuvaranderum == "Helikopter")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "leta")
+            {
+                Console.WriteLine("Du hittade:");      //om man väljer att leta
+                for (int i = 0; i < Helikopter.Count; i++)
+                {
+                    Console.WriteLine(Helikopter[i]);
+                    Inventory.Add(Helikopter[i]);
+                }
+                for (int i = 0; i < Helikopter.Count; i++)
+                {
+                    Helikopter.RemoveAt(i);
+                }
+                Val = "";
+                Console.WriteLine("");
+                Console.WriteLine("Kanse kan andvända dom för att fly");
+            }
+            else if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "back")
+            {
+                nuvaranderum = "Corridor3";         //Dom olika hållen man kan gå
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
 
@@ -292,18 +409,139 @@ class Rooms
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Storflodkant(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
+        String Val = "";
+
+        List<string> Storflodkant = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Storflodkant.Add("1 pinne");
+
+        Console.WriteLine("Du ser att du är vid en stor flod");  //lite text som bärätar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
+        Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        Console.WriteLine("Storflodkant");
+        while (nuvaranderum == "Storflodkant")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "leta")
+            {
+                Console.WriteLine("Du hittade:");      //om man väljer att leta
+                for (int i = 0; i < Storflodkant.Count; i++)
+                {
+                    Console.WriteLine(Storflodkant[i]);
+                    Inventory.Add(Storflodkant[i]);
+                }
+                for (int i = 0; i < Storflodkant.Count; i++)
+                {
+                    Storflodkant.RemoveAt(i);
+                }
+                Val = "";
+            }
+            else if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "back")
+            {
+                nuvaranderum = "Corridor21";
+            }
+            else if (Val == "höger")       //Dom olika hållen man kan gå
+            {
+                nuvaranderum = "Evigvägner";
+            }
+            else if (Val == "vänster")
+            {
+                nuvaranderum = "Evigvägupp";
+            }
+            else if (Val == "framåt")
+            {
+                nuvaranderum = "Båt";
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+        }
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
     }
-    // -------------------------------------------------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Evigvägupp(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
+        String Val = "";
+
+        Console.WriteLine("Du väljer att fortsätta upp");
+        Console.WriteLine("Skriv 'Fortsätt' för att fortsätta upp eller skriv gå 'Tillbaka' för att gå tillbaka till början");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+
+        while (nuvaranderum == "Evigvägupp")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "tillbaka")
+            {
+                nuvaranderum = "Storflodkant";
+            }                              //Dom olika hållen man kan gå
+            else if (Val == "fortsätt")
+            {
+                nuvaranderum = "EvigVägUpp2";
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
     }
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int) Evigvägner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
     {
+                String Val = "";
+
+        Console.WriteLine("Du väljer att fortsätta ner");
+        Console.WriteLine("Skriv 'Fortsätt' för att fortsätta upp eller skriv gå 'Tillbaka' för att gå tillbaka till början");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        while (nuvaranderum == "Evigvägner")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                Val = "";
+            }
+            else if (Val == "tillbaka")
+            {
+                nuvaranderum = "Storflodkant";
+            }                              //Dom olika hållen man kan gå
+            else if (Val == "fortsätt")
+            {
+                nuvaranderum = "EvigVägNer2";
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
+
         Console.ReadLine();
         return (nuvaranderum, mat, vatten);
     }
@@ -1573,13 +1811,10 @@ class Rooms
         Console.WriteLine("Items you have:");
         Console.WriteLine("");
 
-
         for (int i = 0; i < inventory.Count; i++)
         {
             Console.WriteLine(inventory[i]);
         }
-
-
 
         List<string> Cancraft = new List<string>();
 
@@ -1620,7 +1855,7 @@ class Rooms
                 vatten = 100;
             }
         }
-        if (val == "eat" && inventory.Contains("1 Snacks bar"))
+        else if (val == "eat" && inventory.Contains("1 Snacks bar"))
         {
             inventory.Remove("1 Snacks bar");
             if (mat + 20 <= 100)
@@ -1632,12 +1867,30 @@ class Rooms
                 vatten = 100;
             }
         }
+        else if (val == "crafta")
+        {
 
+        }
+        else if (val == "back")
+        {
+
+        }
 
 
         Console.ReadLine();
-
+        Console.Clear();
         return (nuvaranderum, mat, vatten);
     }
 
+    public static (string, int) EvigVägUpp2(int mat, string nuvaranderum)
+    {
+        nuvaranderum = "Evigvägupp";
+        return (nuvaranderum, mat);
+    }
+    
+    public static (string, int) EvigVägNer2(int mat, string nuvaranderum)
+    {
+        nuvaranderum = "Evigvägner";
+        return (nuvaranderum, mat);
+    }
 }
