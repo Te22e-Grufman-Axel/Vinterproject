@@ -5,7 +5,8 @@ int time = 0;
 
 List<string> Inventory = new List<string>();
 
-String nuvaranderum = "Storflodkant";
+String LastRoom = "";
+String nuvaranderum = "Flygner1";
 while (true)
 {
     if (nuvaranderum == "Flygner1")
@@ -17,199 +18,196 @@ while (true)
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Flygner2(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Flygner2(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Litenflod")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Litenflod(Inventory, Mat, vatten, nuvaranderum);
-    }
-    else if (nuvaranderum == "Hem")
-    {
-        Console.Clear();
-        tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Hem(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Litenflod(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Storöppnign")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Storöppnign(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Storöppnign(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Helikopter")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Helikopterner(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Helikopterner(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Orm")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Orm(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Orm(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Storflodkant")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Storflodkant(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Storflodkant(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Evigvägupp")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Evigvägupp(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Evigvägupp(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Evigvägner")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Evigvägner(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Evigvägner(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Båt")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Båt(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Båt(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor1")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor1(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor1(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor2")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor2(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor2(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor3")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor3(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor3(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor4")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor4(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor4(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor5")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor5(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor5(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor6")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor6(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor6(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor7")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor7(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor7(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor8")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor8(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor8(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor9")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor9(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor9(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor10")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor10(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor10(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor11")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor11(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor11(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor12")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor12(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor12(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor13")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor13(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor13(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor14")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor14(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor14(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor15")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor15(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor15(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor16")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor16(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor16(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor17")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor17(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor17(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor18")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor18(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor18(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor19")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor19(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor19(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor20")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor20(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor20(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
     else if (nuvaranderum == "Corridor21")
     {
         Console.Clear();
         tidengår();
-        (nuvaranderum, Mat, vatten) = Rooms.Corridor21(Inventory, Mat, vatten, nuvaranderum);
+        (nuvaranderum, Mat, vatten, LastRoom) = Rooms.Corridor21(Inventory, Mat, vatten, nuvaranderum, LastRoom);
     }
-    else if(nuvaranderum == "EvigVägUpp2")
+    else if (nuvaranderum == "EvigVägUpp2")
     {
         Console.Clear();
-        tidengår();
-         (nuvaranderum, Mat) = Rooms.EvigVägUpp2(Mat, nuvaranderum);
+        (nuvaranderum, Mat) = Rooms.EvigVägUpp2(Mat, nuvaranderum);
     }
-    else if(nuvaranderum == "EvigVägNer2")
+    else if (nuvaranderum == "EvigVägNer2")
     {
         Console.Clear();
-        tidengår();
         (nuvaranderum, Mat) = Rooms.EvigVägNer2(Mat, nuvaranderum);
+    }
+    else if (nuvaranderum == "LastRoom")
+    {
+        Console.Clear();
+        (nuvaranderum, LastRoom) = Rooms.LastRoom(LastRoom, nuvaranderum);
     }
 }
 
@@ -239,7 +237,7 @@ void Flygner1()
 // -------------------------------------------------------------------------------------------------------------------------
 void tidengår()
 {
-    
+
     time++;
     if (time == 24)
     {
@@ -256,5 +254,5 @@ void tidengår()
     {
         Death.thirst();
     }
-     // -------------------------------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------------------------------
 }

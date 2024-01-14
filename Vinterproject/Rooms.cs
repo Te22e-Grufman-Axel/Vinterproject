@@ -1,6 +1,6 @@
 class Rooms
 {
-    public static (string, int, int) Flygner2(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Flygner2(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -20,8 +20,8 @@ class Rooms
         flygner2.Add("1 Par byxor");
         flygner2.Add("1 Par byxor");
 
-        Console.WriteLine("Du är nu tillbaka vid flygplanet");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu tillbaka vid flygplanet");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
         while (nuvaranderum == "Flygner2")
@@ -43,7 +43,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -56,23 +56,67 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Litenflod(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Litenflod(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        String Val = "";
+
+        List<string> Litenflod = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
+        Litenflod.Add("1 pinne");
+        Litenflod.Add("1 Sten");
+        Litenflod.Add("1 Snacks bar");
+
+        Console.WriteLine("Du hittade en liten flod");
+        Console.WriteLine("Skriv 'Drick' för att dricka vatten från floden"); //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriv 'Leta' för att kolla om du kan hitta något i korridoren");
+        Console.WriteLine("Skriv 'Back' för att gå tillbaka");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        while (nuvaranderum == "Litenflod")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "leta")
+            {
+                Console.WriteLine("Du hittade:");      //om man väljer att leta
+                for (int i = 0; i < Litenflod.Count; i++)
+                {
+                    Console.WriteLine(Litenflod[i]);
+                    Inventory.Add(Litenflod[i]);
+                }
+                for (int i = 0; i < Litenflod.Count; i++)
+                {
+                    Litenflod.RemoveAt(i);
+                }
+                Val = "";
+            }
+            else if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
+                Val = "";
+            }
+            else if (Val == "back")
+            {
+                nuvaranderum = "Storöppnign";
+            }
+            else if (Val == "drick")
+            {
+                vatten = +30;
+                Console.WriteLine("Du drack vatten");
+                Val = "";
+            }                       //Dom olika hållen man kan gå
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+        }
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
-    // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Hem(List<string> Inventory, int mat, int vatten, string nuvaranderum)
-    {
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
-    }
-    // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Storöppnign(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+
+    public static (string, int, int, string) Storöppnign(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
 
         String Val = "";
@@ -81,8 +125,8 @@ class Rooms
         Storöppnign.Add("1 pinne");
 
 
-        Console.WriteLine("Du är nu i en stor öppnign någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en stor öppning någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriv 'Flod' för att gå till floden");
         Console.WriteLine("Skriv 'Liten öppning' för att gå till en liten öppning");
         Console.WriteLine("Skriv 'Flygplan' för att gå till flygplanet");
@@ -110,7 +154,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "flod")
@@ -142,11 +186,10 @@ class Rooms
 
 
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Helikopterner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Helikopterner(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -155,10 +198,10 @@ class Rooms
         Helikopter.Add("1 knapp");
 
 
-        Console.WriteLine("Du hittade en helikopter som har krashat");
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du hittade en helikopter som har kraschat");
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
-        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");        //lite text som bärätar vad du kan göra
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");        //lite text som berättar vad du kan göra
 
         while (nuvaranderum == "Helikopter")
         {
@@ -179,12 +222,12 @@ class Rooms
                 }
                 Val = "";
                 Console.WriteLine("");
-                Console.WriteLine("Kanse kan andvända dom för att fly");
+                Console.WriteLine("Kanske kan använda dom för att fly");
             }
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -198,12 +241,11 @@ class Rooms
 
         }
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
 
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Orm(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Orm(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
 
         Random Skada = new Random();
@@ -223,7 +265,7 @@ class Rooms
         string ormlever = "ja";
 
 
-        Console.WriteLine("Du gick in i ett stort runt rum i jungen");
+        Console.WriteLine("Du gick in i ett stort runt rum i djungeln");
         Console.WriteLine("Och du ser en motor i mitten");
         Console.WriteLine("Undrar hur den kom dit");
         Console.WriteLine("När du går fram för att ta blir du slagen av något och kastas bakåt");
@@ -249,9 +291,9 @@ class Rooms
                 int tempmisschans = misschans.Next(100);
                 if (tempmisschans <= lightattackmisschans)
                 {
-                    Console.WriteLine("Du försökte göra en lätt attack men missade fienden.");
+                    Console.WriteLine("Du försökte göra en Light attack men missade fienden.");
                 }
-                else                        //spelaren lightattack kod
+                else                        //spelaren light attack kod
                 {
                     int spelaredamage = Skada.Next(maxskada);
                     nuvaraneaihp -= spelaredamage;
@@ -266,27 +308,27 @@ class Rooms
                 int tempmisschans = misschans.Next(100);
                 if (tempmisschans <= hardattackmisschans)
                 {
-                    Console.WriteLine("Du försöker göra en svår attack men missade fienden");
+                    Console.WriteLine("Du försöker göra en hard attack men missade fienden");
                 }
-                else                //Spelaren hardattack kod
+                else                //Spelaren hard attack kod
                 {
                     int spelaredamage = Skada.Next(2 * maxskada);
                     nuvaraneaihp -= spelaredamage;
-                    Console.WriteLine("Du attackerar ormen med en svår attack och gör " + spelaredamage + " i skada");
+                    Console.WriteLine("Du attackerar ormen med en hard attack och gör " + spelaredamage + " i skada");
                     Console.WriteLine("Ormen har nu " + nuvaraneaihp + " i liv(hp).");
                 }
             }
             //------------------------------------------------------------------------------------------------------
             else if (spelaretypavattack == "f")                       //Om man försöker fly
             {
-                Console.WriteLine("Du försöte fly men ormen lyckades döda dig");
+                Console.WriteLine("Du försökte fly men ormen lyckades döda dig");
                 Console.ReadLine();
                 Death.snake();
             }
             // ------------------------------------------------------------------
             else                 //om man inte slår
             {
-                Console.WriteLine("Du valde inget så du slår ingen.");
+                Console.WriteLine("Du valde inget så du slår inte.");
             }
             // ------------------------------------------------------------------
             Console.WriteLine("");
@@ -301,13 +343,13 @@ class Rooms
                 int tempmisschans = misschans.Next(100);
                 if (tempmisschans <= lightattackmisschans)
                 {
-                    Console.WriteLine("Ormen försökta göra en lätt attack men missade dig.");
+                    Console.WriteLine("Ormen försökta göra en light attack men missade dig.");
                 }
                 else                        //ai lightattack kod
                 {
                     int aidamage = Skada.Next(maxskada);
                     nuvaranespelarhp -= aidamage;
-                    Console.WriteLine("Ormen attackerar dig med en lättattack och gör " + aidamage + " i skada");
+                    Console.WriteLine("Ormen attackerar dig med en light attack och gör " + aidamage + " i skada");
                     Console.WriteLine("Du har nu " + nuvaranespelarhp + " i liv(hp).");
                 }
             }
@@ -317,13 +359,13 @@ class Rooms
                 int tempmisschans = misschans.Next(100);
                 if (tempmisschans <= hardattackmisschans)
                 {
-                    Console.WriteLine("Ormen försökte göra en svår attack men missade dig");
+                    Console.WriteLine("Ormen försökte göra en hard attack men missade dig");
                 }
                 else                   //ai hardattack kod
                 {
                     int aidamage = Skada.Next(2 * maxskada);
                     nuvaranespelarhp -= aidamage;
-                    Console.WriteLine("Ormen attackerar dig med en svår attack och gör " + aidamage + " i skada");
+                    Console.WriteLine("Ormen attackerar dig med en hard attack och gör " + aidamage + " i skada");
                     Console.WriteLine("Du har nu " + nuvaranespelarhp + " i liv(hp).");
                 }
             }
@@ -348,8 +390,8 @@ class Rooms
             Console.Clear();
             Console.WriteLine("Du lyckades döda ormen");
             Console.WriteLine("Du går först och hämtar motorn som låg i mitten");
-            Console.WriteLine("Kanse kan du andvända den för att fly härifrån");
-            Console.WriteLine("Sen kommer du på att du kanse kan äta ormen för mat");
+            Console.WriteLine("Kanske kan du använda den för att fly härifrån");
+            Console.WriteLine("Sen kommer du på att du kanske kan äta ormen för mat");
             Console.WriteLine("Så du tar ut din kniv och hackar Ormen i mindre delar");
 
 
@@ -374,7 +416,7 @@ class Rooms
                 Console.WriteLine("");
             }
 
-            Console.WriteLine("Du är i rummet där du dödade ormen");  //lite text som berätar vad du kan göra
+            Console.WriteLine("Du är i rummet där du dödade ormen");  //lite text som berättar vad du kan göra
             Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
             Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
 
@@ -385,7 +427,7 @@ class Rooms
             if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -402,24 +444,22 @@ class Rooms
             }
         }
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
 
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Storflodkant(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Storflodkant(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Storflodkant = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Storflodkant.Add("1 pinne");
 
-        Console.WriteLine("Du ser att du är vid en stor flod");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du ser att du är vid en stor flod");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Storflodkant");
         while (nuvaranderum == "Storflodkant")
         {
             Val = Console.ReadLine();
@@ -442,7 +482,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -467,11 +507,10 @@ class Rooms
             }
         }
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // --------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Evigvägupp(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Evigvägupp(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -487,7 +526,7 @@ class Rooms
             if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "tillbaka")
@@ -505,13 +544,12 @@ class Rooms
 
         }
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Evigvägner(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Evigvägner(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
-                String Val = "";
+        String Val = "";
 
         Console.WriteLine("Du väljer att fortsätta ner");
         Console.WriteLine("Skriv 'Fortsätt' för att fortsätta upp eller skriv gå 'Tillbaka' för att gå tillbaka till början");
@@ -524,7 +562,7 @@ class Rooms
             if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "tillbaka")
@@ -542,17 +580,58 @@ class Rooms
 
         }
 
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Båt(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Båt(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        String Val = "";
+
+        Console.WriteLine("Du hittar en liten båt vid vattnet");
+        Console.WriteLine("Du kommer på att du kan försöka laga den"); //lite text som berättar vad du kan göra'
+        Console.WriteLine("Skriv 'Fixa' För att laga båten");
+        Console.WriteLine("Skriva 'Back' för att gå tillbaka");
+        Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
+        while (nuvaranderum == "Båt")
+        {
+            Val = Console.ReadLine();
+            Val.ToLower();
+
+            if (Val == "inventory")
+            {
+                Console.Clear();      //Om man vill öppna inventoriet
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
+                Val = "";
+            }
+            else if (Val == "fixa")
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Du väljer att försöka fixa båten");
+
+                if (Inventory.Contains("1 Motor") && Inventory.Contains("1 spak") && Inventory.Contains("1 knapp") && Inventory.Contains("1 pinne") && Inventory.Contains("1 pinne") && Inventory.Contains("1 pinne") && Inventory.Contains("1 pinne") && Inventory.Contains("1 pinne") && Inventory.Contains("1 pinne") && Inventory.Contains("1 Sten") && Inventory.Contains("1 Sten") && Inventory.Contains("1 Sten"))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Du vann");
+                }
+                else
+                {
+                    Console.WriteLine("Du försökte men kunde inte laga båten");
+                }
+            }
+            else if (Val == "back")
+            {
+                nuvaranderum = "Flygner2";
+            }                              //Dom olika hållen man kan gå
+            else
+            {
+                Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
+            }
+
+        }
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor1(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor1(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -567,8 +646,8 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Snacks bar");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
         while (nuvaranderum == "Corridor1")
@@ -593,7 +672,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -610,11 +689,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor2(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor2(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -622,8 +700,8 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -650,7 +728,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -671,11 +749,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor3(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor3(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -684,11 +761,11 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
         Corridor.Add("1 Snacks bar");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
         while (nuvaranderum == "Corridor3")
@@ -710,7 +787,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -727,23 +804,22 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor4(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor4(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
-        Corridor.Add("1 Medecin");
-        Corridor.Add("1 Medecin");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
+        Corridor.Add("1 Medicin");
+        Corridor.Add("1 Medicin");
         Corridor.Add("1 Par byxor");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
         while (nuvaranderum == "Corridor4")
@@ -768,7 +844,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -785,26 +861,24 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor5(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor5(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
-        Corridor.Add("1 Medecin");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
+        Corridor.Add("1 Medicin");
         Corridor.Add("1 Vatten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor5");
         while (nuvaranderum == "Corridor5")
         {
             Val = Console.ReadLine();
@@ -827,7 +901,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -844,11 +918,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor6(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor6(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -860,11 +933,10 @@ class Rooms
         Corridor.Add("1 Tröja");
         Corridor.Add("1 Vatten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor6");
         while (nuvaranderum == "Corridor6")
         {
             Val = Console.ReadLine();
@@ -887,7 +959,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -904,11 +976,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor7(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor7(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -917,14 +988,13 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
         Corridor.Add("1 Vatten");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor7");
         while (nuvaranderum == "Corridor7")
         {
             Val = Console.ReadLine();
@@ -947,7 +1017,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -972,11 +1042,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor8(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor8(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -988,12 +1057,11 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Vatten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor8");
         while (nuvaranderum == "Corridor8")
         {
             Val = Console.ReadLine();
@@ -1016,7 +1084,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1037,11 +1105,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor9(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor9(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1053,12 +1120,11 @@ class Rooms
         Corridor.Add("1 Vatten");
         Corridor.Add("1 Snacks bar");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
-        Console.WriteLine("Du är i en återvändsgränd så ända du kan göra är att gå tillbacka");
-        Console.WriteLine("Skrive 'Back' för att gå tillbaka");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
+        Console.WriteLine("Du är i en återvändsgränd så ända du kan göra är att gå tillbaka");
+        Console.WriteLine("Skriv 'Back' för att gå tillbaka");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor9");
         while (nuvaranderum == "Corridor9")
         {
             Val = Console.ReadLine();
@@ -1081,7 +1147,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1094,24 +1160,22 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor10(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor10(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor10");
         while (nuvaranderum == "Corridor10")
         {
             Val = Console.ReadLine();
@@ -1134,7 +1198,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1151,11 +1215,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor11(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor11(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1166,12 +1229,11 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor11");
         while (nuvaranderum == "Corridor11")
         {
             Val = Console.ReadLine();
@@ -1194,7 +1256,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1215,22 +1277,20 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor12(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor12(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor12");
         while (nuvaranderum == "Corridor12")
         {
             Val = Console.ReadLine();
@@ -1253,7 +1313,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1270,11 +1330,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor13(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor13(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1282,11 +1341,10 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor13");
         while (nuvaranderum == "Corridor13")
         {
             Val = Console.ReadLine();
@@ -1309,7 +1367,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1326,11 +1384,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor14(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor14(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1340,12 +1397,11 @@ class Rooms
         Corridor.Add("1 Vatten");
         Corridor.Add("1 Tröja");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor14");
         while (nuvaranderum == "Corridor14")
         {
             Val = Console.ReadLine();
@@ -1368,7 +1424,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1389,11 +1445,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor15(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor15(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1401,11 +1456,10 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor15");
         while (nuvaranderum == "Corridor15")
         {
             Val = Console.ReadLine();
@@ -1428,7 +1482,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1445,11 +1499,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor16(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor16(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1459,11 +1512,10 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor16");
         while (nuvaranderum == "Corridor16")
         {
             Val = Console.ReadLine();
@@ -1486,7 +1538,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1503,11 +1555,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor17(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor17(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1519,11 +1570,10 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor17");
         while (nuvaranderum == "Corridor17")
         {
             Val = Console.ReadLine();
@@ -1546,7 +1596,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1563,11 +1613,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor18(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor18(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1579,15 +1628,14 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
-        Corridor.Add("1 Medecin");
+        Corridor.Add("1 Medicin");
         Corridor.Add("1 Snacks bar");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor18");
         while (nuvaranderum == "Corridor18")
         {
             Val = Console.ReadLine();
@@ -1610,7 +1658,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1632,10 +1680,10 @@ class Rooms
 
         }
         Console.ReadKey();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor19(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor19(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1644,11 +1692,10 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor19");
         while (nuvaranderum == "Corridor19")
         {
             Val = Console.ReadLine();
@@ -1671,7 +1718,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1688,11 +1735,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor20(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor20(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
@@ -1701,11 +1747,10 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
-        Console.WriteLine("Corridor20");
         while (nuvaranderum == "Corridor20")
         {
             Val = Console.ReadLine();
@@ -1728,7 +1773,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1745,19 +1790,18 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) Corridor21(List<string> Inventory, int mat, int vatten, string nuvaranderum)
+    public static (string, int, int, string) Corridor21(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
 
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
 
-        Console.WriteLine("Du är nu i en corridor någonstans i junglen");  //lite text som bärätar vad du kan göra
-        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i corridoren");
+        Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
+        Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
         Console.WriteLine("Skriv 'Höger' för att gå till höger och skriv 'vänster' för att gå vänster");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -1784,7 +1828,7 @@ class Rooms
             else if (Val == "inventory")
             {
                 Console.Clear();      //Om man vill öppna inventoriet
-                (nuvaranderum, mat, vatten) = inventory(Inventory, mat, vatten, nuvaranderum);
+                (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
             else if (Val == "back")
@@ -1801,11 +1845,10 @@ class Rooms
             }
 
         }
-        Console.ReadLine();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
     // -------------------------------------------------------------------------------------------------------------------------
-    public static (string, int, int) inventory(List<string> inventory, int vatten, int mat, string nuvaranderum)
+    public static (string, int, int, string) inventory(List<string> inventory, int vatten, int mat, string nuvaranderum, string LastRoom)
     {
         Console.WriteLine("Welcome to the inventory");
         Console.WriteLine("Items you have:");
@@ -1869,17 +1912,27 @@ class Rooms
         }
         else if (val == "crafta")
         {
+            Console.WriteLine("Vad vill du crafta?");
+            val = Console.ReadLine();
+            val.ToLower();
 
+            if (val == "3 Cloth")
+            {
+                inventory.Add("3 Cloth");
+                inventory.Remove("1 Tröja");
+            }
         }
         else if (val == "back")
         {
-
+            LastRoom = nuvaranderum;
+            nuvaranderum = "LastRoom";
         }
-
-
-        Console.ReadLine();
+        else
+        {
+            Console.WriteLine("Du valde inget");
+        }
         Console.Clear();
-        return (nuvaranderum, mat, vatten);
+        return (nuvaranderum, mat, vatten, LastRoom);
     }
 
     public static (string, int) EvigVägUpp2(int mat, string nuvaranderum)
@@ -1887,10 +1940,18 @@ class Rooms
         nuvaranderum = "Evigvägupp";
         return (nuvaranderum, mat);
     }
-    
+
     public static (string, int) EvigVägNer2(int mat, string nuvaranderum)
     {
         nuvaranderum = "Evigvägner";
         return (nuvaranderum, mat);
     }
+
+    public static (string, string) LastRoom(string LastRoom, string nuvaranderum)
+    {
+        nuvaranderum = LastRoom;
+        return (nuvaranderum, LastRoom);
+    }
 }
+
+
