@@ -3,7 +3,7 @@ int vatten = 100;
 int dag = 0;
 int time = 0;
 
-List<string> Inventory = new List<string>();
+List<string> Inventory = new List<string>();   //andvänder en lista så jag kan altid lägg in mer saker
 
 String LastRoom = "";
 String nuvaranderum = "Flygner1";

@@ -128,7 +128,6 @@ class Rooms
         Console.WriteLine("Du är nu i en stor öppning någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriv 'Flod' för att gå till floden");
-        Console.WriteLine("Skriv 'Liten öppning' för att gå till en liten öppning");
         Console.WriteLine("Skriv 'Flygplan' för att gå till flygplanet");
         Console.WriteLine("Skriv 'Neråt' för att gå neråt eller skriv 'Höger' för att gå till höger");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -157,13 +156,9 @@ class Rooms
                 (nuvaranderum, mat, vatten, LastRoom) = inventory(Inventory, mat, vatten, nuvaranderum, LastRoom);
                 Val = "";
             }
-            else if (Val == "flod")
+            else if (Val == "flod")//Dom olika hållen man kan gå
             {
                 nuvaranderum = "Litenflod";
-            }
-            else if (Val == "liten öppning")       //Dom olika hållen man kan gå
-            {
-                nuvaranderum = "Hem";
             }
             else if (Val == "flygplan")
             {
@@ -1850,7 +1845,11 @@ class Rooms
     // -------------------------------------------------------------------------------------------------------------------------
     public static (string, int, int, string) inventory(List<string> inventory, int vatten, int mat, string nuvaranderum, string LastRoom)
     {
+        bool wannaLeave = false;
+
         Console.WriteLine("Welcome to the inventory");
+        Console.WriteLine("Food:" + mat);
+        Console.WriteLine("Vatten:" + vatten);
         Console.WriteLine("Items you have:");
         Console.WriteLine("");
 
@@ -1883,53 +1882,67 @@ class Rooms
         Console.WriteLine("Skriv 'Craft' För att crafta");
         Console.WriteLine("Skriv 'Eat' För att äta");
         Console.WriteLine("Skriv 'Drink' för att dricka");
-        string val = Console.ReadLine();
-        val.ToLower();
-
-        if (val == "drink" && inventory.Contains("1 Vatten"))
+        Console.WriteLine("Skriv 'Heal' för att ta lite medecin");
+        while (wannaLeave == false)
         {
-            inventory.Remove("1 Vatten");
-            if (vatten + 30 <= 100)
-            {
-                vatten = vatten + 30;
-            }
-            else if (vatten + 30 > 100)
-            {
-                vatten = 100;
-            }
-        }
-        else if (val == "eat" && inventory.Contains("1 Snacks bar"))
-        {
-            inventory.Remove("1 Snacks bar");
-            if (mat + 20 <= 100)
-            {
-                vatten = vatten + 20;
-            }
-            else if (mat + 20 > 100)
-            {
-                vatten = 100;
-            }
-        }
-        else if (val == "crafta")
-        {
-            Console.WriteLine("Vad vill du crafta?");
-            val = Console.ReadLine();
+            string val = Console.ReadLine();
             val.ToLower();
 
-            if (val == "3 Cloth")
+            if (val == "drink" && inventory.Contains("1 Vatten"))
             {
-                inventory.Add("3 Cloth");
-                inventory.Remove("1 Tröja");
+                inventory.Remove("1 Vatten");
+                if (vatten + 30 <= 100)
+                {
+                    vatten = vatten + 30;
+                }
+                else if (vatten + 30 > 100)
+                {
+                    vatten = 100;
+                }
+                val = "";
             }
-        }
-        else if (val == "back")
-        {
-            LastRoom = nuvaranderum;
-            nuvaranderum = "LastRoom";
-        }
-        else
-        {
-            Console.WriteLine("Du valde inget");
+            else if (val == "eat" && inventory.Contains("1 Snacks bar"))
+            {
+                inventory.Remove("1 Snacks bar");
+                if (mat + 20 <= 100)
+                {
+                    vatten = vatten + 20;
+                }
+                else if (mat + 20 > 100)
+                {
+                    vatten = 100;
+                }
+                val = "";
+            }
+            else if (val == "heal" && inventory.Contains("1 Medicin"))
+            {
+                val = "";
+            }
+            else if (val == "crafta")
+            {
+                Console.WriteLine("Vad vill du crafta?");
+                val = Console.ReadLine();
+                val.ToLower();
+
+                if (val == "3 Cloth")
+                {
+                    inventory.Add("3 Cloth");
+                    inventory.Remove("1 Tröja");
+                }
+                val = "";
+            }
+            else if (val == "back")
+            {
+                LastRoom = nuvaranderum;
+                nuvaranderum = "LastRoom";
+                wannaLeave = true;
+                val = "";
+            }
+            else
+            {
+                Console.WriteLine("Du valde inget");
+                val = "";
+            }
         }
         Console.Clear();
         return (nuvaranderum, mat, vatten, LastRoom);
