@@ -19,7 +19,7 @@ class Rooms
         flygner2.Add("1 Par byxor");
         flygner2.Add("1 Par byxor");
         flygner2.Add("1 Par byxor");
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu tillbaka vid flygplanet");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka");
@@ -68,6 +68,7 @@ class Rooms
         Litenflod.Add("1 Sten");
         Litenflod.Add("1 Snacks bar");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du hittade en liten flod");
         Console.WriteLine("Skriv 'Drick' för att dricka vatten från floden"); //lite text som berättar vad du kan göra
         Console.WriteLine("Skriv 'Leta' för att kolla om du kan hitta något i korridoren");
@@ -124,7 +125,7 @@ class Rooms
         List<string> Storöppnign = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Storöppnign.Add("1 pinne");
 
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en stor öppning någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriv 'Flod' för att gå till floden");
@@ -192,7 +193,7 @@ class Rooms
         Helikopter.Add("1 spak");
         Helikopter.Add("1 knapp");
 
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du hittade en helikopter som har kraschat");
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -410,7 +411,7 @@ class Rooms
             {
                 Console.WriteLine("");
             }
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
             Console.WriteLine("Du är i rummet där du dödade ormen");  //lite text som berättar vad du kan göra
             Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
             Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -449,7 +450,7 @@ class Rooms
 
         List<string> Storflodkant = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Storflodkant.Add("1 pinne");
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du ser att du är vid en stor flod");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -508,7 +509,7 @@ class Rooms
     public static (string, int, int, string) Evigvägupp(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du väljer att fortsätta upp");
         Console.WriteLine("Skriv 'Fortsätt' för att fortsätta upp eller skriv gå 'Tillbaka' för att gå tillbaka till början");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -545,7 +546,7 @@ class Rooms
     public static (string, int, int, string) Evigvägner(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du väljer att fortsätta ner");
         Console.WriteLine("Skriv 'Fortsätt' för att fortsätta upp eller skriv gå 'Tillbaka' för att gå tillbaka till början");
         Console.WriteLine("Om du vill öppna inventoriet skriv 'Inventory'");
@@ -581,7 +582,7 @@ class Rooms
     public static (string, int, int, string) Båt(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
-
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du hittar en liten båt vid vattnet");
         Console.WriteLine("Du kommer på att du kan försöka laga den"); //lite text som berättar vad du kan göra'
         Console.WriteLine("Skriv 'Fixa' För att laga båten");
@@ -629,7 +630,6 @@ class Rooms
     public static (string, int, int, string) Corridor1(List<string> Inventory, int mat, int vatten, string nuvaranderum, string LastRoom)
     {
         String Val = "";
-
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
@@ -641,6 +641,7 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Snacks bar");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -695,6 +696,7 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka");
@@ -759,6 +761,7 @@ class Rooms
         Corridor.Add("1 Medicin");
         Corridor.Add("1 Snacks bar");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -813,6 +816,7 @@ class Rooms
         Corridor.Add("1 Medicin");
         Corridor.Add("1 Par byxor");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -870,6 +874,7 @@ class Rooms
         Corridor.Add("1 Medicin");
         Corridor.Add("1 Vatten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -928,6 +933,7 @@ class Rooms
         Corridor.Add("1 Tröja");
         Corridor.Add("1 Vatten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -985,6 +991,7 @@ class Rooms
         Corridor.Add("1 Vatten");
         Corridor.Add("1 Medicin");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1052,6 +1059,7 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Vatten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1115,6 +1123,7 @@ class Rooms
         Corridor.Add("1 Vatten");
         Corridor.Add("1 Snacks bar");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Du är i en återvändsgränd så ända du kan göra är att gå tillbaka");
@@ -1167,6 +1176,7 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Medicin");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1224,6 +1234,7 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1282,6 +1293,7 @@ class Rooms
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1336,6 +1348,7 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1392,6 +1405,7 @@ class Rooms
         Corridor.Add("1 Vatten");
         Corridor.Add("1 Tröja");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1451,6 +1465,7 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1507,6 +1522,7 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1565,6 +1581,7 @@ class Rooms
         Corridor.Add("1 Snacks bar");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1615,6 +1632,7 @@ class Rooms
     {
         String Val = "";
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
         Corridor.Add("1 pinne");
@@ -1687,6 +1705,7 @@ class Rooms
         Corridor.Add("1 pinne");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1742,6 +1761,7 @@ class Rooms
         Corridor.Add("1 Sten");
         Corridor.Add("1 Sten");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1795,6 +1815,7 @@ class Rooms
         List<string> Corridor = new List<string>();       //skapar en lista för rummet och lägger in vad som ska va i rummet
         Corridor.Add("1 pinne");
 
+        (mat, vatten) = kanse_blir_törstig(mat, vatten);
         Console.WriteLine("Du är nu i en korridor någonstans i djungeln");  //lite text som berättar vad du kan göra
         Console.WriteLine("Skriva 'Leta' för att kolla om du kan hitta något i korridoren");
         Console.WriteLine("Skriva 'Back' för att gå tillbaka eller skriv 'Framåt' för att gå framåt");
@@ -1965,6 +1986,34 @@ class Rooms
         nuvaranderum = LastRoom;
         return (nuvaranderum, LastRoom);
     }
+    public static (int, int) kanse_blir_törstig(int mat, int vatten)
+    {
+        if (mat < 50 && mat >= 25)
+        {
+            Console.WriteLine("Du börjar känna dig hunrig");
+        }
+        else if (mat < 25 && mat >= 10)
+        {
+            Console.WriteLine("Du är nu hunrig");
+        }
+        else if (mat < 10)
+        {
+            Console.WriteLine("Du svältar snart");
+        }
+
+        if (vatten < 60 && vatten >= 40)
+        {
+            Console.WriteLine("Du börjar känna dig törstig");
+        }
+        else if (vatten < 40 && vatten >= 20)
+        {
+            Console.WriteLine("Du är nu turstig");
+        }
+        else if (vatten < 20)
+        {
+            Console.WriteLine("Du dör snart av turst");
+        }
+        return (mat, vatten);
+    }
+    
 }
-
-
