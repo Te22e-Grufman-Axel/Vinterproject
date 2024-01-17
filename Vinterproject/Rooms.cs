@@ -1922,6 +1922,10 @@ class Rooms
                 }
                 val = "";
             }
+            else if(val == "drink" && !inventory.Contains("1 Vatten"));
+            {
+                Console.WriteLine("Du försökte dricka men hade inget vatten");
+            }
             else if (val == "eat" && inventory.Contains("1 Snacks bar"))
             {
                 inventory.Remove("1 Snacks bar");
@@ -2015,5 +2019,5 @@ class Rooms
         }
         return (mat, vatten);
     }
-    
+
 }
