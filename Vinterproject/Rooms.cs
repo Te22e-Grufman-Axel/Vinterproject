@@ -109,7 +109,14 @@ class Rooms
             }
             else if (Val == "drick")
             {
+                if(vatten + 30 > 100)
+                {
+                    vatten = 100;
+                }
+                else if(vatten + 30 < 100)
+                {
                 vatten = +30;
+                }
                 Console.WriteLine("Du drack vatten");
                 Val = "";
             }                       //Dom olika hållen man kan gå
@@ -541,7 +548,6 @@ class Rooms
             {
                 Console.WriteLine("Du valde inget så du bara satt där i en timma och väntar");
             }
-
         }
 
         return (nuvaranderum, mat, vatten, LastRoom);
