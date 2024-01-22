@@ -37,6 +37,10 @@ class Rooms
                     Console.WriteLine(flygner2[i]);
                     Inventory.Add(flygner2[i]);
                 }
+                                for (int i = 0; i < flygner2.Count; i++)
+                {
+                    flygner2.RemoveAt(i);
+                }
 
                 Val = "";
             }
@@ -1868,10 +1872,10 @@ class Rooms
     {
         bool wannaLeave = false;
 
-        Console.WriteLine("Welcome to the inventory");
-        Console.WriteLine("Food:" + mat);
+        Console.WriteLine("välkommern till inventoriet");
+        Console.WriteLine("Mat:" + mat);
         Console.WriteLine("Vatten:" + vatten);
-        Console.WriteLine("Items you have:");
+        Console.WriteLine("Föremål du har:");
         Console.WriteLine("");
 
         for (int i = 0; i < inventory.Count; i++)
@@ -1888,7 +1892,7 @@ class Rooms
 
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine("Items du kan crafta:");
+        Console.WriteLine("Föremål du kan tilverka:");
 
         for (int i = 0; i < Cancraft.Count; i++)
         {
@@ -1903,7 +1907,7 @@ class Rooms
         Console.WriteLine("Skriv 'Craft' För att crafta");
         Console.WriteLine("Skriv 'Eat' För att äta");
         Console.WriteLine("Skriv 'Drink' för att dricka");
-        Console.WriteLine("Skriv 'Heal' för att ta lite medecin");
+        Console.WriteLine("Skriv 'Heal' för att ta lite medicin");
         while (wannaLeave == false)
         {
             string val = Console.ReadLine();
@@ -1921,10 +1925,6 @@ class Rooms
                     vatten = 100;
                 }
                 val = "";
-            }
-            else if(val == "drink" && !inventory.Contains("1 Vatten"));
-            {
-                Console.WriteLine("Du försökte dricka men hade inget vatten");
             }
             else if (val == "eat" && inventory.Contains("1 Snacks bar"))
             {
@@ -2011,11 +2011,11 @@ class Rooms
         }
         else if (vatten < 40 && vatten >= 20)
         {
-            Console.WriteLine("Du är nu turstig");
+            Console.WriteLine("Du är nu törstig");
         }
         else if (vatten < 20)
         {
-            Console.WriteLine("Du dör snart av turst");
+            Console.WriteLine("Du dör snart av törst");
         }
         return (mat, vatten);
     }

@@ -213,7 +213,7 @@ while (true)
 
 void Flygner1()
 {
-    Console.WriteLine("Du vaknar upp i din stol");
+    Console.WriteLine("Du vaknar upp");
     Console.WriteLine("Du undrar var du är, vad hände");
     Console.WriteLine("Du börjar komma ihåg");
     Console.WriteLine("Du var på väg till philipinerna när dit plan började störta");
@@ -222,8 +222,8 @@ void Flygner1()
     Console.WriteLine("");
     Console.WriteLine("Du kollar runt dig men ser att alla andra är döda");
     Console.WriteLine("Du ställer dig upp i stolen och ser att planet är i två delar");
-    Console.WriteLine("Du tar dig ur flygplanet och ser att du är i en jungel");
-    Console.WriteLine("Du ser en väg genom träden och väljer att följa den");
+    Console.WriteLine("Du tar dig ur flygplanet och ser att du är i en djungel");
+    Console.WriteLine("Du ser en väg mellan träden och väljer att följa den");
 
     Console.WriteLine("");
     Console.WriteLine("");
